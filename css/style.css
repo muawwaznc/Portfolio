@@ -979,6 +979,9 @@ section:nth-child(odd) .animate.scroll,
     .home-content h1{
         font-size: 5.2rem;
     }
+    .home-sci{
+        bottom: 0;
+    }
     .education{
         padding: 10rem 4% 5rem 5%;
     }
@@ -1021,9 +1024,6 @@ section:nth-child(odd) .animate.scroll,
     }
     .home-content h1{
         font-size: 5rem;
-    }
-    .home-sci{
-        bottom: 0;
     }
 }
 
