@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muawwaz Naeem</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="./index.html#home" class="logo">muawwaznc.<span class="animate" style="--i:1;"></span></a>
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+        <nav class="navbar">
+            <a href="./index.html#home" class="active">Home</a>
+            <a href="./index.html#about">About</a>
+            <a href="./index.html#education">Journey</a>
+            <a href="./index.html#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="./index.html#contact">Contact</a>
+
+            <span class="active-nav"></span>
+            <span class="animate" style="--i:2;"></span>
+        </nav>
+    </header>
+    
+    <section class="project show-animate" id="project">
+        <h2 class="heading">My <span>Projects</span><span class="animate" style="--i:1;"></span></h2>
+        <div class="project-row">
+            <div class="project-column">
+                <div class="project-box">
+                    <div class="project-content">
+                        <div onclick="openPopup('Society Management System', 'muawwaznc.github.io/Portfolio/', 'SocietyManagementSystem')" class="content">
+                            <h3>Society Management System</h3>
+                            <p>
+                                It is a window software that is actually a management system of a university student 
+                                society.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <div onclick="openPopup('Boat Battle Game', 'muawwaznc.github.io/Portfolio/', 'BoatBattle')" class="content">
+                            <h3>Boat Battle Game</h3>
+                            <p>
+                                This game is based on the fighting of naval forces. The player has the ship and our 
+                                enemies have also ships. They will attack the player; the player can also shoot at 
+                                them and he has to survive and kill his enemy with their boats.
+                            </p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="project-content">
+                        <div onclick="openPopup('Tamagotchi Game', 'muawwaznc.github.io/Portfolio/', 'TamagotchiGame')" class="content">
+                            <h3>Tamagotchi Game</h3>
+                            <p>It is a basic Tamagotchi Game, I codded it in C# windows form for my Fiverr client</p>
+                        </div>
+                    </div>
+
+                    <span class="animate scroll" style="--i:3;"></span>
+                </div>
+                
+
+            </div>
+
+            <div class="project-column">
+                <div class="project-box">
+
+                    <div class="project-content">
+                        <div onclick="openPopup('My Portfolio Website', 'muawwaznc.github.io/Portfolio/', 'TicTacToe')" class="content">
+                            <h3>My Portfolio Website</h3>
+                            <p>I have designed my portfolio website using HTML, CSS, and JavaScript.</p>
+                            <p><a class="company-link" target="_blank" href="https://muawwaznc.github.io/Portfolio/">https://muawwaznc.github.io/Portfolio/</a></p>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <div onclick="openPopup('Tic Tac Toe Game', 'muawwaznc.github.io/TicTacToe/', 'TicTacToe')" class="content">
+                            <h3>Tic Tac Toe Game</h3>
+                            <p>It is a web based game that is is written in ReactJS framework.</p>
+                            <p><a class="company-link" target="_blank" href="https://muawwaznc.github.io/TicTacToe/">https://muawwaznc.github.io/TicTacToe/</a></p>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <div onclick="openPopup('BackToAI: Website', 'www.backtoai.com/', 'BackToAI')" class="content">
+                            <h3>BackToAI: Website</h3>
+                            <p>
+                                It is a website of the company of software house, I am the part of frontend developer team. 
+                                It is remote base project.
+                            </p>
+                            <p><a class="company-link" target="_blank" href="https://www.backtoai.com/">https://www.backtoai.com/</a></p>
+                        </div>
+
+                    </div>
+
+                    <span class="animate scroll" style="--i:3;"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="popup" id="popup">
+        <h3 id="popup-heading">BackToAI: Website</h3>
+
+        <div id="carousel">
+            <div id="slide-container">
+
+                <div class="slide" data-slideIndex="0">
+                    <img width="1200" height="600" src="./images/BackToAI/1.JPG">
+                </div>
+
+                <div class="slide" data-slideIndex="1">
+                    <img width="1200" height="600" src="./images/BackToAI/2.JPG">
+                </div>
+                
+                <div class="slide" data-slideIndex="2">
+                    <img width="1200" height="600" src="./images/BackToAI/3.JPG">
+                </div>
+
+                <div class="slide" data-slideIndex="3">
+                    <img width="1200" height="600" src="./images/BackToAI/4.JPG">
+                </div>
+
+                <div class="slide" data-slideIndex="4">
+                    <img width="1200" height="600" src="./images/BackToAI/5.JPG">
+                </div>
+            </div>
+            <div id="back-button" class="arrow back">&lt</div>
+            <div id="forward-button" class="arrow forward">&gt</div>
+            <div class="slide-indicators">
+                <div class="slide-indicator active"></div>
+                <div class="slide-indicator"></div>
+                <div class="slide-indicator"></div>
+                <div class="slide-indicator"></div>
+                <div class="slide-indicator"></div>
+            </div>
+        </div>
+        
+        <div class="btn-box">
+            <a id="project-link" href="https://www.backtoai.com/" target="_blank" class="btn">Check It Out</a>
+            <a onclick="closePopup()" class="btn">Close</a>
+            <!-- <span class="animate" style="--i:5;"></span> -->
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by muawwznc | All Rights Reserved</p>
+            <span class="animate scroll" style="--i:1;"></span>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#"><i class="bx bx-up-arrow-alt"></i></a>
+            <span class="animate scroll" style="--i:3;"></span>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+<script src="./js/projectAlert.js"></script>
+<script>
+    let popup = document.getElementById('popup');
+    function openPopup(heading, link, folderName){
+        console.log(heading, link, folderName)
+        let popupHeading = document.getElementById('popup-heading');
+        let carousel = document.getElementById("slide-container");
+        let projectLink = document.getElementById("project-link");
+
+        popupHeading.innerHTML = heading;
+        carousel.innerHTML = GetSlideImages(folderName)
+        projectLink.href = 'https://' + link;
+        console.log(popupHeading, carousel, projectLink)
+        popup.classList.add("open-popup")
+
+        autoplayCarousel();
+    }
+    function closePopup(){
+        popup.classList.remove("open-popup")
+    }
+    function autoplayCarousel() {
+        const carouselEl = document.getElementById("carousel");
+        const slideContainerEl = carouselEl.querySelector("#slide-container");
+        const slideEl = carouselEl.querySelector(".slide");
+        let slideWidth = slideEl.offsetWidth;
+        // Add click handlers
+        document.querySelector("#back-button")
+            .addEventListener("click", () => navigate("backward"));
+        document.querySelector("#forward-button")
+            .addEventListener("click", () => navigate("forward"));
+        document.querySelectorAll(".slide-indicator")
+            .forEach((dot, index) => {
+                dot.addEventListener("click", () => navigate(index));
+                dot.addEventListener("mouseenter", () => clearInterval(autoplay));
+            });
+        // Add keyboard handlers
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'ArrowLeft') {
+                clearInterval(autoplay);
+                navigate("backward");
+            } else if (e.code === 'ArrowRight') {
+                clearInterval(autoplay);
+                navigate("forward");
+            }
+        });
+        // Add resize handler
+        window.addEventListener('resize', () => {
+            slideWidth = slideEl.offsetWidth;
+        });
+        // Autoplay
+        const autoplay = setInterval(() => navigate("forward"), 3000);
+        slideContainerEl.addEventListener("mouseenter", () => clearInterval(autoplay));
+        // Slide transition
+        const getNewScrollPosition = (arg) => {
+            const gap = 10;
+            const maxScrollLeft = slideContainerEl.scrollWidth - slideWidth;
+            if (arg === "forward") {
+                const x = slideContainerEl.scrollLeft + slideWidth + gap;
+                return x <= maxScrollLeft ? x : 0;
+            } else if (arg === "backward") {
+                const x = slideContainerEl.scrollLeft - slideWidth - gap;
+                return x >= 0 ? x : maxScrollLeft;
+            } else if (typeof arg === "number") {
+                const x = arg * (slideWidth + gap);
+                return x;
+            }
+        }
+        const navigate = (arg) => {
+            slideContainerEl.scrollLeft = getNewScrollPosition(arg);
+        }
+        // Slide indicators
+        const slideObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const slideIndex = entry.target.dataset.slideindex;
+                    carouselEl.querySelector('.slide-indicator.active').classList.remove('active');
+                    carouselEl.querySelectorAll('.slide-indicator')[slideIndex].classList.add('active');
+                }
+            });
+        }, { root: slideContainerEl, threshold: .1 });
+        document.querySelectorAll('.slide').forEach((slide) => {
+            slideObserver.observe(slide);
+        });
+    }
+
+    function GetSlideImages(folderName){
+        images = '<div class="slide" data-slideIndex="0">' +
+                    '<img width="1200" height="600" src="./images/' + folderName + '/1.JPG">' +
+                '</div>' +
+
+                '<div class="slide" data-slideIndex="1">' +
+                    '<img width="1200" height="600" src="./images/' + folderName + '/2.JPG">' +
+                '</div>' +
+                
+                '<div class="slide" data-slideIndex="2">' +
+                    '<img width="1200" height="600" src="./images/' + folderName + '/3.JPG">' +
+                '</div>' +
+
+                '<div class="slide" data-slideIndex="3">' +
+                    '<img width="1200" height="600" src="./images/' + folderName + '/4.JPG">' +
+                '</div>' +
+
+                '<div class="slide" data-slideIndex="4">' +
+                    '<img width="1200" height="600" src="./images/' + folderName + '/5.JPG">' +
+                '</div>'
+        return images;
+    }
+</script>
+</html>
