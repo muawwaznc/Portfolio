@@ -166,6 +166,7 @@ section{
     z-index: 1;
     overflow: hidden;
     transition: .5s;
+    cursor: pointer;
 }
 .btn-box .btn:nth-child(2){
     background: transparent;
@@ -560,6 +561,7 @@ span{
     border-radius: .6rem;
     margin-bottom: 2rem;
     overflow: hidden;
+    cursor: pointer;
 }
 .project-content .content::before{
     content: '';
@@ -592,25 +594,26 @@ span{
 }
 /* Popup */
 .popup{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    visibility: hidden;
     width: 50%;
     background-color: var(--second-bg-color);
     border: var(--main-color) solid 1px;
+    text-align: center;
     border-radius: 10px;
+    padding: 0 30px 30px;
     position: absolute;
+    z-index: 9999;
     top: 0;
     left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transform: translate(-50%, -50%) scale(0.1);
-    padding: 0 30px 30px;
-    visibility: hidden;
     transition: transform 0.3s, top 0.3s;
-    z-index: 9999;
 
 }
 .open-popup{
-    top: 50%;
+    /* top: 50%; */
     transform: translate(-50%, -50%) scale(1);
     visibility: visible;
 }
@@ -949,6 +952,12 @@ section:nth-child(odd) .animate.scroll,
         background: var(--bg-color);
         opacity: .6;
     }
+    .home-sci{
+        bottom: 10px;
+    }
+    .popup{
+        width: 80%;
+    }
 }
 @media (max-width: 768px){
     html{
@@ -983,6 +992,22 @@ section:nth-child(odd) .animate.scroll,
         margin-top: 2rem;
         text-align: center;
     }
+    .popup{
+        width: 95%;
+        padding: 0 10px 20px 10px;
+    }
+    #carousel{
+        width: 100%;
+        margin: 10px 0 20px
+    }
+    .arrow.back {
+        top: 36%;
+        left: 5%;
+    }
+    .arrow.forward {
+        top: 36%;
+        right: 5%;
+    }
 }
 @media (max-width: 371px){
     .home{
@@ -996,6 +1021,9 @@ section:nth-child(odd) .animate.scroll,
     }
     .home-content h1{
         font-size: 5rem;
+    }
+    .home-sci{
+        bottom: 0;
     }
 }
 
