@@ -18,8 +18,8 @@
         <a href="./index.html#home" class="logo">muawwaznc.<span class="animate" style="--i:1;"></span></a>
         <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
         <nav class="navbar">
-            <a href="./index.html#home" class="active">Home</a>
-            <a href="#about">About</a>
+            <a href="./index.html#home">Home</a>
+            <a href="#about" class="active">About</a>
             <a href="./index.html#education">Journey</a>
             <a href="./index.html#skills">Skills</a>
             <a href="./projects.html">Projects</a>
@@ -47,8 +47,11 @@
     
     <section class="education" id="education">
         <div class="education-row">
+
             <div class="education-column">
+
                 <div class="education-box">
+                    
                     <div class="education-content">
                         <div class="content">
                             <h3>Personal Information</h3>
@@ -147,6 +150,43 @@
             <span class="animate scroll" style="--i:3;"></span>
         </div>
     </footer>
-    <script src="js/script.js"></script>
 </body>
+<script>
+    // Toggle icon navbar
+    let menuIcon = document.querySelector('#menu-icon')
+    let navbar = document.querySelector('.navbar')
+    menuIcon.onclick = () => {
+        menuIcon.classList.toggle('bx-x');
+        navbar.classList.toggle('active');
+    }
+
+    // Scroll Section
+    let sections = document.querySelectorAll('section');
+    window.onscroll = () =>{
+        sections.forEach(sec => {
+            let top = window.scrollY;
+            let offset = sec.offsetTop - 100;
+            let height = sec.offsetHeight;
+
+            if(top >= offset && top < offset + height){
+                // active sections for animations on scroll
+                sec.classList.add('show-animate')
+            }
+            // if want to use animation thats repeats on scroll use this
+            else{
+                sec.classList.remove("show-animate");
+            }
+        });
+        //Sticky Header
+        let header = document.querySelector('header');
+        header.classList.toggle('sticky', window.scrollY > 100);
+        // remove toggle icon and navbar when click navbar links (scroll)
+        menuIcon.classList.remove('bx-x');
+        navbar.classList.remove('active');
+
+        // animation footer on scroll
+        let footer = document.querySelector('footer');
+        footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
+    }
+</script>
 </html>
