@@ -40,7 +40,10 @@
         </div>
         <div class="about-content">
             <h3>Muawwaz Naeem Chishti<span class="animate" style="--i:3;"></span></h3>
-            
+        </div>
+        <div class="about-iconDown" id="iconDown">
+            <button><i class="bx bx-down-arrow-alt"></i></button>
+            <span class="animate scroll" style="--i:3;"></span>
         </div>
     </section>
 
@@ -153,15 +156,16 @@
     </footer>
 </body>
 <script>
-    // Toggle icon navbar
-    let menuIcon = document.querySelector('#menu-icon')
-    let navbar = document.querySelector('.navbar')
+    let menuIcon = document.querySelector('#menu-icon');
+    let navbar = document.querySelector('.navbar');
+    let aboutIconDown = document.querySelector('#iconDown');
+    console.log(aboutIconDown);
+
     menuIcon.onclick = () => {
         menuIcon.classList.toggle('bx-x');
         navbar.classList.toggle('active');
     }
 
-    // Scroll Section
     let sections = document.querySelectorAll('section');
     window.onscroll = () =>{
         sections.forEach(sec => {
@@ -169,23 +173,28 @@
             let offset = sec.offsetTop - 100;
             let height = sec.offsetHeight;
 
-            if(top >= offset && top < offset + height){
-                // active sections for animations on scroll
+            if(top >= offset && top < offset + height)
+            {                
                 sec.classList.add('show-animate')
             }
-            // if want to use animation thats repeats on scroll use this
-            else{
+            else
+            {
                 sec.classList.remove("show-animate");
             }
         });
-        //Sticky Header
+
+        aboutIconDown.onclick = (e) => {
+            e.preventDefault();
+            let nextSection = document.querySelector('#education');
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        
         let header = document.querySelector('header');
         header.classList.toggle('sticky', window.scrollY > 100);
-        // remove toggle icon and navbar when click navbar links (scroll)
+        
         menuIcon.classList.remove('bx-x');
         navbar.classList.remove('active');
 
-        // animation footer on scroll
         let footer = document.querySelector('footer');
         footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
     }
