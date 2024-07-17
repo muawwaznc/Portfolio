@@ -42,13 +42,13 @@
             <h3>Muawwaz Naeem Chishti<span class="animate" style="--i:3;"></span></h3>
         </div>
         <div class="about-iconDown" id="iconDown">
-            <button><i class="bx bx-down-arrow-alt"></i></button>
+            <a href="#Information"><i class="bx bx-down-arrow-alt"></i></a>
             <span class="animate scroll" style="--i:3;"></span>
         </div>
     </section>
 
     
-    <section class="education" id="education">
+    <section class="education" id="Information">
         <div class="education-row">
 
             <div class="education-column">
@@ -158,8 +158,6 @@
 <script>
     let menuIcon = document.querySelector('#menu-icon');
     let navbar = document.querySelector('.navbar');
-    let aboutIconDown = document.querySelector('#iconDown');
-    console.log(aboutIconDown);
 
     menuIcon.onclick = () => {
         menuIcon.classList.toggle('bx-x');
@@ -182,12 +180,6 @@
                 sec.classList.remove("show-animate");
             }
         });
-
-        aboutIconDown.onclick = (e) => {
-            e.preventDefault();
-            let nextSection = document.querySelector('#education');
-            nextSection.scrollIntoView({ behavior: 'smooth' });
-        }
         
         let header = document.querySelector('header');
         header.classList.toggle('sticky', window.scrollY > 100);

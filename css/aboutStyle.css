@@ -272,26 +272,26 @@ footer .animate.scroll{
     position: relative;
 }
 
-.about-iconDown button {
+.about-iconDown a {
     position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: 1.2rem;  /* Increased padding */
+    padding: 1.2rem; 
     background: var(--main-color);
     border: .2rem solid var(--main-color);
-    border-radius: .8rem;  /* Slightly increased border-radius */
+    border-radius: .8rem; 
     z-index: 1;
     overflow: hidden;
-    width: 8rem;  /* Set width */
-    height: 4rem;  /* Set height */
+    width: 8rem;  
+    height: 4rem; 
 }
 
-.about-iconDown button:hover{
+.about-iconDown a:hover{
     cursor: pointer;
 }
 
-.about-iconDown button::before {
+.about-iconDown a::before {
     content: '';
     position: absolute;
     top: 0;
@@ -303,17 +303,17 @@ footer .animate.scroll{
     transition: .5s;
 }
 
-.about-iconDown button:hover::before {
+.about-iconDown a:hover::before {
     width: 100%;
 }
 
-.about-iconDown button i {
+.about-iconDown a i {
     font-size: 3rem;  /* Increased font size */
     color: var(--bg-color);
     transition: .5s;
 }
 
-.about-iconDown button:hover i {
+.about-iconDown a:hover i {
     color: var(--main-color);
 }
 
