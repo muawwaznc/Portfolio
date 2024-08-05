@@ -220,15 +220,15 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span><span class="animate scroll" style="--i:1;"></span></h2>
         
-        <form action="#contact" method="post">
+        <form onsubmit="submitContactUsForm(event)" method="post">
             <div class="input-box">
                 <div class="input-field">
-                    <input type="text" placeholder="Full Name" required>
+                    <input id="nameInput" type="text" placeholder="Full Name" required>
                     <span class="focus"></span>
                 </div>
 
                 <div class="input-field">
-                    <input type="email" placeholder="Email" required>
+                    <input id="emailInput" type="email" placeholder="Email" required>
                     <span class="focus"></span>
                 </div>
 
@@ -237,12 +237,12 @@
 
             <div class="input-box">
                 <div class="input-field">
-                    <input type="number" placeholder="Mobile Number" required>
+                    <input id="mobileNumberInput" type="tel" placeholder="Mobile Number" required>
                     <span class="focus"></span>
                 </div>
 
                 <div class="input-field">
-                    <input type="email" placeholder="Subject" required>
+                    <input id="subjectInput" type="text" placeholder="Subject" required>
                     <span class="focus"></span>
                 </div>
 
@@ -250,7 +250,7 @@
             </div>
 
             <div class="textarea-field">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Message..." required></textarea>
+                <textarea id="messageInput" cols="30" rows="10" placeholder="Message..." required></textarea>
                 <span class="focus"></span>
                 <span class="animate scroll" style="--i:7;"></span>
             </div>
@@ -273,6 +273,9 @@
             <span class="animate scroll" style="--i:3;"></span>
         </div>
     </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/sendEmail.js"></script>
     <script src="js/script.js"></script>
 </body>
 <script>
