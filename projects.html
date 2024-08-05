@@ -12,7 +12,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <!-- Header -->
+
     <header class="header">
         <a href="./index.html#home" class="logo">muawwaznc.<span class="animate" style="--i:1;"></span></a>
         <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
@@ -223,7 +223,8 @@
         </div>
     </section>
 
-    
+    <div id="overlay" class="overlay" onclick="closePopup()"></div>
+
     <div class="popup" id="popup">
         <h3 id="popup-heading">BackToAI: Website</h3>
 
@@ -283,39 +284,49 @@
 </body>
 <script>
     let popup = document.getElementById('popup');
-    function openPopup(heading, link, folderName){
+    let overlay = document.getElementById('overlay');
+
+    function openPopup(heading, link, folderName) {
         let popupHeading = document.getElementById('popup-heading');
         let carousel = document.getElementById("slide-container");
         let projectLink = document.getElementById("project-link");
 
         popupHeading.innerHTML = heading;
-        carousel.innerHTML = GetSlideImages(folderName)
+        carousel.innerHTML = GetSlideImages(folderName);
         projectLink.href = 'https://' + link;
-        popup.classList.add("open-popup")
+        popup.classList.add("open-popup");
+        overlay.style.display = 'block';
 
         var top = scrollY + ((screen.height - popup.offsetHeight) * 1.3);
         popup.style.top = String(top + "px");
 
         autoplayCarousel();
     }
-    function closePopup(){
-        popup.classList.remove("open-popup")
+
+    function closePopup() {
+        popup.classList.remove("open-popup");
+        overlay.style.display = 'none';
+        const slideContainerEl = document.querySelector("#slide-container");
+        slideContainerEl.scrollLeft = 0;
+        const slideIndicators = document.querySelectorAll(".slide-indicator");
+        slideIndicators.forEach(indicator => indicator.classList.remove('active'));
+        slideIndicators[0].classList.add('active');
     }
+
     function autoplayCarousel() {
         const carouselEl = document.getElementById("carousel");
         const slideContainerEl = carouselEl.querySelector("#slide-container");
         const slideEl = carouselEl.querySelector(".slide");
         let slideWidth = slideEl.offsetWidth;
+
         // Add click handlers
-        document.querySelector("#back-button")
-            .addEventListener("click", () => navigate("backward"));
-        document.querySelector("#forward-button")
-            .addEventListener("click", () => navigate("forward"));
-        document.querySelectorAll(".slide-indicator")
-            .forEach((dot, index) => {
-                dot.addEventListener("click", () => navigate(index));
-                dot.addEventListener("mouseenter", () => clearInterval(autoplay));
-            });
+        document.querySelector("#back-button").addEventListener("click", () => navigate("backward"));
+        document.querySelector("#forward-button").addEventListener("click", () => navigate("forward"));
+        document.querySelectorAll(".slide-indicator").forEach((dot, index) => {
+            dot.addEventListener("click", () => navigate(index));
+            dot.addEventListener("mouseenter", () => clearInterval(autoplay));
+        });
+
         // Add keyboard handlers
         document.addEventListener('keydown', (e) => {
             if (e.code === 'ArrowLeft') {
@@ -326,12 +337,14 @@
                 navigate("forward");
             }
         });
+
         // Add resize handler
         window.addEventListener('resize', () => {
             slideWidth = slideEl.offsetWidth;
         });
-        
+
         slideContainerEl.addEventListener("mouseenter", () => clearInterval(autoplay));
+
         // Slide transition
         const getNewScrollPosition = (arg) => {
             const gap = 10;
@@ -347,9 +360,11 @@
                 return x;
             }
         }
+
         const navigate = (arg) => {
             slideContainerEl.scrollLeft = getNewScrollPosition(arg);
         }
+
         // Slide indicators
         const slideObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -360,32 +375,30 @@
                 }
             });
         }, { root: slideContainerEl, threshold: .1 });
+
         document.querySelectorAll('.slide').forEach((slide) => {
             slideObserver.observe(slide);
         });
     }
 
-    function GetSlideImages(folderName){
-        images = '<div class="slide" data-slideIndex="0">' +
-                    '<img width="1200" height="600" src="./images/' + folderName + '/1.JPG">' +
-                '</div>' +
-
-                '<div class="slide" data-slideIndex="1">' +
-                    '<img width="1200" height="600" src="./images/' + folderName + '/2.JPG">' +
-                '</div>' +
-                
-                '<div class="slide" data-slideIndex="2">' +
-                    '<img width="1200" height="600" src="./images/' + folderName + '/3.JPG">' +
-                '</div>' +
-
-                '<div class="slide" data-slideIndex="3">' +
-                    '<img width="1200" height="600" src="./images/' + folderName + '/4.JPG">' +
-                '</div>' +
-
-                '<div class="slide" data-slideIndex="4">' +
-                    '<img width="1200" height="600" src="./images/' + folderName + '/5.JPG">' +
-                '</div>'
-        return images;
+    function GetSlideImages(folderName) {
+        return `
+            <div class="slide" data-slideIndex="0">
+                <img width="1200" height="600" src="./images/${folderName}/1.JPG">
+            </div>
+            <div class="slide" data-slideIndex="1">
+                <img width="1200" height="600" src="./images/${folderName}/2.JPG">
+            </div>
+            <div class="slide" data-slideIndex="2">
+                <img width="1200" height="600" src="./images/${folderName}/3.JPG">
+            </div>
+            <div class="slide" data-slideIndex="3">
+                <img width="1200" height="600" src="./images/${folderName}/4.JPG">
+            </div>
+            <div class="slide" data-slideIndex="4">
+                <img width="1200" height="600" src="./images/${folderName}/5.JPG">
+            </div>`;
     }
 </script>
+
 </html>
